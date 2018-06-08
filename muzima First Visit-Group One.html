@@ -1,0 +1,184 @@
+<html>
+<head>
+    <title>
+        First Visit Form
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/muzima.css" rel="stylesheet">
+    <link href="css/jquery.datetimepicker.css" rel="stylesheet">
+    <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+    <script src="js/muzima.js"></script>
+
+</head>
+
+<body class="col-md-10 col-md-offset-1">
+<div class="form_title">
+
+</div>
+<br>
+
+<form name="firstvisit_form" action="First_Vist_Form.php" class="forms_data" >
+    <div class="section">
+        <h3>FIRST VISIT FORM</h3>
+
+        <label> Anternatal Blood Tests Done?  <span class="required">*</span> </label>
+
+        <select  class="form-control" required class="" data-concept="6116^ANTENATAL BLOOD TEST DONE^99DCT" requared>
+
+            <option value >... </option>
+            <option value="1065^YES^99DCT"> Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+
+        </select>
+
+
+        <label>  Counselling Done?  <span class="required">*</span> </label>
+
+        <select required   class="form-control" data-concept="6117^COUNSELLING DONE^99DCT" requared>
+
+            <option value >... </option>
+            <option value="1065^YES^99DCT"> Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+
+        </select>
+
+
+
+        <label> Expected Body Changes Discussed?   <span class="required">*</span> </label>
+
+        <select required  class="form-control"  data-concept="6119^EXPECTED BODY CHANGES DISCUSSED^99DCT" requared>
+
+            <option value >... </option>
+            <option value="1065^YES^99DCT"> Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+
+        </select>
+
+
+        <div></div>
+        <label> Physical Examination Done ?   <span class="required">*</span> </label>
+
+        <select required  class="form-control" data-concept="6120^PHYSICAL EXAMINATION DONE^99DCT" requared>
+
+            <option value >... </option>
+            <option value="1065^YES^99DCT"> Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+
+        </select>
+
+
+        <label> Physical Examination Done ?   <span class="required">*</span> </label>
+
+        <select required  class="form-control"  data-concept="5096^NEXT VISIT DATE GIVEN^99DCT" requared>
+
+            <option value >... </option>
+            <option value="1065^YES^99DCT"> Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+
+        </select>
+
+
+
+        <label> Next Visit Date  ?   <span class="required">*</span> </label>
+        <input type="date"  name="date_of_next_visit" class="form-control datepicker nonFutureDate" >
+
+
+
+    </div>
+
+    <div class="section">
+        <h3>Encounter Details</h3>
+        <div class="form-group">
+            <label for="encounter.location_id">Encounter Location:<span class="required">*</span></label>
+            <input class="form-control valid-location-only" id="encounter.location_id" type="text"
+                   placeholder="Start typing something..." required="required">
+            <input class="form-control" name="encounter.location_id" type="hidden">
+        </div>
+
+
+        <div class="form-group">
+            <label for="encounter.provider_id_select">Provider Name:<span class="required">*</span></label>
+            <input class="form-control valid-provider-only" id="encounter.provider_id_select"
+                   type="text" placeholder="Start typing something...">
+            <input class="form-control" name="encounter.provider_id_select" type="hidden">
+        </div>
+
+
+        <div class="form-group show_provider_id_text">
+            <label for="encounter.provider_id">Provider system-id:<span class="required">*</span></label>
+            <input class="form-control checkDigit" id="encounter.provider_id" disabled name="encounter.provider_id"
+                   type="text" required="required"  placeholder="Provider Id">
+        </div>
+
+
+        <div class="form-group">
+            <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+            <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+                   name="encounter.encounter_datetime" type="text" readonly="readonly"
+                   required="required">
+        </div>
+
+
+        <div class="form-group">
+            <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+                   type="hidden" required="required">
+            <input class="form-control" id="encounter.user_system_id" name="encounter.user_system_id" type="hidden">
+        </div>
+    </div>
+
+
+
+
+    <div class="section">
+        <h3>Demographics</h3>
+        <div class="form-group">
+            <input class="form-control" id="patient.uuid"
+                   name="patient.uuid" type="hidden" readonly="readonly">
+        </div>
+
+
+        <div class="form-group">
+            <label for="patient.family_name">Family Name:</label>
+            <input class="form-control" id="patient.family_name"
+                   name="patient.family_name" type="text" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.given_name">Given Name:</label>
+            <input class="form-control" id="patient.given_name"
+                   name="patient.given_name" type="text" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.middle_name">Middle Name:</label>
+            <input class="form-control" id="patient.middle_name"
+                   name="patient.middle_name" type="text" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.sex">Gender:</label>
+            <select class="form-control" id="patient.sex" name="patient.sex" readonly="readonly">
+                <option value="">...</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="patient.birth_date">Date Of Birth:</label>
+            <input class="form-control" id="patient.birth_date"
+                   name="patient.birth_date" type="text" readonly="readonly">
+        </div>
+    </div>
+
+    <input type="submit" name="submits" >
+</form>
+
+
+
+</body>
+
+</html>
